@@ -1,0 +1,58 @@
+<Root>
+<obj>altalanos;ButtonClose;Button2;Button3;pfooter;lkezelo;lupdate</obj>
+<altalanos>
+  <Type>menupanel</Type>
+  <text>Leltár - almenü</text>
+  <bgcolor>White</bgcolor>
+  <params_to_labels>lkezelo</params_to_labels>
+</altalanos>
+<lupdate>
+  <Type>label</Type>
+  <top>0</top>
+  <left>0</left>
+  <width>0</width>
+  <height>0</height>
+  <visible>false</visible>
+</lupdate>
+<lkezelo>
+  <Type>label</Type>
+  <top>0</top>
+  <left>0</left>
+  <width>0</width>
+  <height>0</height>
+  <visible>false</visible>
+</lkezelo>
+<Button2>
+  <Type>custom_button</Type>
+  <image>shelf.png</image>
+  <Text>Leltár</Text>
+  <top>10</top>
+  <width>270</width>
+  <height>55</height>
+  <left>30</left>
+  <lua_after_click>egyeb/menuinit.lua LELTAR [lkezelo]</lua_after_click>
+</Button2>
+<Button3>
+  <Type>custom_button</Type>
+  <image>shelf.png</image>
+  <Text>Örzött leltár</Text>
+  <top>85</top>
+  <width>270</width>
+  <height>55</height>
+  <left>30</left>
+  <lua_after_click>egyeb/menuinit.lua ORZLELTAR [lkezelo]</lua_after_click>
+</Button3>
+<ButtonClose>
+  <Type>custom_button</Type>
+  <left>30</left>
+  <image>logout.png</image>
+  <Text>Vissza</Text>
+  <top>160</top>
+  <width>270</width>
+  <height>55</height>
+  <lua_after_click>common/panel_exit.lua [lkezelo]</lua_after_click>
+</ButtonClose>
+<pfooter>
+  <file>pfooter.xml</file>
+</pfooter>
+</Root>

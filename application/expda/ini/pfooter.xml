@@ -1,0 +1,43 @@
+<Root>
+<obj>pfooter;flabel;lstatus;lluastat</obj>
+<pfooter>
+  <type>panel</type>
+  <width>330</width>
+  <top>255</top>
+  <left>0</left>
+  <height>60</height>
+  <visible>true</visible>
+</pfooter>
+<flabel>
+  <Type>label</Type>
+  <Text>exPDA v4.0 - exPanda Kft, 2014-2016</Text>
+  <top>20</top>
+  <width>330</width>
+  <font_color>white</font_color>
+  <bgcolor>#008B8B</bgcolor>
+  <left>0</left>
+  <parent>pfooter</parent>
+  <visible>true</visible>
+</flabel>
+<lstatus>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>0</top>
+  <width>165</width>
+  <parent>pfooter</parent>
+  <left>0</left>
+  <height>20</height>
+  <bgcolor>yellow</bgcolor>
+</lstatus>
+<lluastat>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>0</top>
+  <width>165</width>
+  <parent>pfooter</parent>
+  <left>165</left>
+  <height>20</height>
+  <bgcolor>orange</bgcolor>
+</lluastat>
+
+</Root>

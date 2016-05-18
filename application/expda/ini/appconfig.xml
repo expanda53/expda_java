@@ -1,0 +1,11 @@
+<Root>
+<connection_type>php</connection_type>
+<php_url_local>http://192.168.2.4:80/panda/expda.php</php_url_local>
+<php_url>http://top-tyre.ddns.net:3333/panda/expda.php</php_url>
+<tcpserver_ip>192.168.1.68</tcpserver_ip>
+<tcpserver_port>9099</tcpserver_port>
+<images_folder>application\expda\images</images_folder>
+<lua_folder>application\expda\lua</lua_folder>
+<export_folder>application\expda\export</export_folder>
+<vkod_teszt>true</vkod_teszt>
+</Root>

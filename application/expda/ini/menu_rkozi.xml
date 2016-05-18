@@ -1,0 +1,68 @@
+<Root>
+<obj>altalanos;ButtonClose;Button2;Button3;Button4;pfooter;lkezelo;lupdate</obj>
+<altalanos>
+  <Type>menupanel</Type>
+  <text>Raktárközi mozgatás - almenü</text>
+  <bgcolor>White</bgcolor>
+  <params_to_labels>lkezelo</params_to_labels>
+</altalanos>
+<lupdate>
+  <Type>label</Type>
+  <top>0</top>
+  <left>0</left>
+  <width>0</width>
+  <height>0</height>
+  <visible>false</visible>
+</lupdate>
+<lkezelo>
+  <Type>label</Type>
+  <top>0</top>
+  <left>0</left>
+  <width>0</width>
+  <height>0</height>
+  <visible>false</visible>
+</lkezelo>
+<Button2>
+  <Type>custom_button</Type>
+  <image>arrow-in.png</image>
+  <Text>Bevét helykód nélkül</Text>
+  <top>10</top>
+  <width>270</width>
+  <height>55</height>
+  <left>30</left>
+  <lua_after_click>egyeb/menuinit.lua RKBEVET_HKOD_NELKUL [lkezelo]</lua_after_click>
+</Button2>
+<Button3>
+  <Type>custom_button</Type>
+  <image>arrow-in.png</image>
+  <Text>Bevét helykóddal</Text>
+  <top>85</top>
+  <width>270</width>
+  <height>55</height>
+  <left>30</left>
+  <lua_after_click>egyeb/menuinit.lua RKBEVET_HKOD [lkezelo]</lua_after_click>
+</Button3>
+<Button4>
+  <Type>custom_button</Type>
+  <image>arrow-out.png</image>
+  <Text>Kiadás</Text>
+  <top>160</top>
+  <width>130</width>
+  <height>55</height>
+  <left>30</left>
+  <lua_after_click>egyeb/menuinit.lua RKKIADAS [lkezelo]</lua_after_click>
+</Button4>
+<ButtonClose>
+  <Type>custom_button</Type>
+  <left>170</left>
+  <image>logout.png</image>
+  <Text>Vissza</Text>
+  <top>160</top>
+  <width>130</width>
+  <height>55</height>
+  <lua_after_click>common/panel_exit.lua [lkezelo]</lua_after_click>
+</ButtonClose>
+<pfooter>
+  <file>pfooter.xml</file>
+</pfooter>
+</Root>

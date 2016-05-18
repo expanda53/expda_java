@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="expdaws/" kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/laszl/workspace/expda/jar/symbolclasses.jar"/>
+	<classpathentry kind="lib" path="C:/Users/laszl/workspace/expda/jar/swt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/laszl/workspace/javax-xml-soap-1.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/laszl/workspace/expda/jar/mailapi.jar"/>
+	<classpathentry kind="lib" path="C:/Users/laszl/workspace/expda/jar/luaj-jme-3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/laszl/workspace/expda/jar/luaj-jse-3.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

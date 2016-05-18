@@ -1,0 +1,171 @@
+<Root>
+<obj>altalanos;pcikkval;panel1;ltitle;lhklabel;lhkoc;lcikklabel;lcikk;lcikkc;lcikod;ButtonClose;bkiad;bbevesz;bujhkod;BCode1;BCode2;pfooter;pzaras;lkezelo;pcikkval_bvalaszt;ldrb</obj>
+<altalanos>
+  <Type>mainpanel</Type>
+  <text>Leltár</text>
+  <lua_on_create>leltar/panelinit.lua</lua_on_create>
+  <params_to_labels>lkezelo</params_to_labels>
+</altalanos>
+<lkezelo>
+  <Type>label</Type>
+  <top>0</top>
+  <left>0</left>
+  <width>0</width>
+  <height>0</height>
+  <visible>false</visible>
+</lkezelo>
+<panel1>
+  <type>panel</type>
+  <width>350</width>
+  <height>255</height>
+  <top>0</top>
+  <visible>true</visible>
+</panel1>
+<ltitle>
+  <Type>label</Type>
+  <Text>Leltár</Text>
+  <top>0</top>
+  <width>350</width>
+  <parent>panel1</parent>
+  <bgcolor>#008B8B</bgcolor>
+  <font_bold>true</font_bold>
+</ltitle>
+<lhklabel>
+  <Type>label</Type>
+  <Text>Helykód:</Text>
+  <top>35</top>
+  <width>60</width>
+  <parent>panel1</parent>
+  <font_color>black</font_color>
+  <visible>true</visible>
+  <bgcolor>green</bgcolor>
+  <left>2</left>  
+</lhklabel>
+<lhkoc>
+  <Type>text</Type>
+  <Text>_</Text>
+  <top>35</top>
+  <width>60</width>
+  <parent>panel1</parent>
+  <left>65</left>
+  <visible>true</visible>
+  <lua_on_change>leltar/bcode1.lua [lhkoc]</lua_on_change>
+  <bgcolor>orange</bgcolor>
+  <font_color>black</font_color>
+</lhkoc>
+<lcikklabel>
+  <Type>label</Type>
+  <Text>Cikk</Text>
+  <top>65</top>
+  <width>60</width>
+  <parent>panel1</parent>
+  <left>2</left>
+  <font_color>black</font_color>
+  <bgcolor>green</bgcolor>
+  <visible>false</visible>
+</lcikklabel>
+<lcikk>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>87</top>
+  <width>350</width>
+  <parent>panel1</parent>
+  <left>2</left>
+  <font_color>blue</font_color>
+  <font_bold>true</font_bold>
+  <visible>false</visible>
+  <align>left</align>
+</lcikk>
+<lcikkc>
+  <Type>text</Type>
+  <Text>_</Text>
+  <top>65</top>
+  <width>100</width>
+  <parent>panel1</parent>
+  <left>65</left>
+  <visible>false</visible>
+  <bgcolor>orange</bgcolor>
+  <lua_on_change>leltar/bcode2.lua [lcikkc] [lkezelo]</lua_on_change>
+</lcikkc>
+<lcikod>
+  <Type>label</Type>
+  <top>0</top>
+  <left>0</left>
+  <width>0</width>
+  <height>0</height>
+  <visible>false</visible>
+</lcikod>
+<ldrb>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>107</top>
+  <width>60</width>
+  <parent>panel1</parent>
+  <left>2</left>
+  <font_color>blue</font_color>
+  <font_bold>true</font_bold>
+  <visible>false</visible>
+  <align>left</align>
+</ldrb>
+<ButtonClose>
+  <Type>custom_button</Type>
+  <Text>Átnézés</Text>
+  <top>200</top>
+  <width>100</width>
+  <height>40</height>
+  <lua_after_click>leltar/zaras.lua</lua_after_click>
+  <parent>panel1</parent>
+</ButtonClose>
+<bbevesz>
+  <Type>custom_button</Type>
+  <Text>Mentés</Text>
+  <top>200</top>
+  <width>100</width>
+  <height>40</height>
+  <left>204</left>
+  <lua_after_click>leltar/mentes.lua [lcikod] [lcikkc] + [lkezelo]</lua_after_click>
+  <parent>panel1</parent>
+  <visible>false</visible>
+</bbevesz>
+<bujhkod>
+  <Type>custom_button</Type>
+  <Text>Új helykód</Text>
+  <top>35</top>
+  <width>100</width>
+  <height>40</height>
+  <left>210</left>
+  <lua_after_click>leltar/ujhkod.lua</lua_after_click>
+  <parent>panel1</parent>
+  <visible>false</visible>
+</bujhkod>
+<BCode1>
+  <Type>barcode</Type>
+  <lua_after_trigger>leltar/bcode1.lua [lhkoc]</lua_after_trigger>
+  <valueto>lhkoc</valueto>
+</BCode1>
+<BCode2>
+  <Type>barcode</Type>
+  <lua_after_trigger>leltar/bcode2.lua [lcikkc] [lkezelo]</lua_after_trigger>
+  <valueto>lcikkc</valueto>
+</BCode2>
+<pfooter>
+  <file>pfooter.xml</file>
+</pfooter>
+<pzaras>
+  <file>pzaras_leltar.xml</file>
+</pzaras>
+<pcikkval>
+  <file>pcikkval.xml</file>
+</pcikkval>
+<pcikkval_bvalaszt>
+  <Type>custom_button</Type>
+  <Text>Kiválaszt</Text>
+  <top>252</top>
+  <width>112</width>
+  <height>40</height>
+  <left>114</left>
+  <lua_after_click>leltar/cikkment.lua [lcikkc] [selcikk] [selnev] [lkezelo]</lua_after_click>
+  <parent>pcikkval</parent>
+</pcikkval_bvalaszt>
+
+</Root>

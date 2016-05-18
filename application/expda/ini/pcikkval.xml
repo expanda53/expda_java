@@ -1,0 +1,109 @@
+<Root>
+<obj>pcikkval;pcikkdetails;lfilterlabel;lfilter;pcikkval_table;pcikkval_bfrissit;pcikkval_bzaras;selcikk;selnev;selcsopnev</obj>
+<pcikkval>
+  <type>panel</type>
+  <width>330</width>
+  <height>300</height>
+  <top>0</top>
+  <left>0</left>
+  <visible>false</visible>
+</pcikkval>
+<lfilterlabel>
+  <Type>label</Type>
+  <Text>Cikknév</Text>
+  <top>0</top>
+  <width>60</width>
+  <left>0</left>
+  <height>20</height>
+  <parent>pcikkval</parent>
+</lfilterlabel>
+<lfilter>
+  <Type>text</Type>
+  <Text>_</Text>
+  <top>0</top>
+  <width>265</width>
+  <left>65</left>
+  <parent>pcikkval</parent>
+  <height>20</height>
+  <lua_on_change>common/cikkval_refresh.lua [lfilter]</lua_on_change>
+</lfilter>
+<pcikkval_table>
+  <Type>table</Type>
+  <width>330</width>
+  <height>190</height>
+  <top>20</top>
+  <left>0</left>
+  <column_width_nev>300</column_width_nev>
+  <column_title_nev>Név</column_title_nev>
+  <column_width_csopnev>0</column_width_csopnev>
+  <column_title_csopnev>C</column_title_csopnev>
+  <column_width_kod>0</column_width_kod>
+  <column_title_kod>Kód</column_title_kod>
+  <valuefrom>kod;nev;csopnev</valuefrom>
+  <valueto>selcikk;selnev;selcsopnev</valueto>
+  <font_size>10</font_size>
+  <row_height>25</row_height>
+  <parent>pcikkval</parent>
+</pcikkval_table>
+<pcikkval_bfrissit>
+  <Type>custom_button</Type>
+  <Text>Frissítés</Text>
+  <top>252</top>
+  <width>112</width>
+  <height>40</height>
+  <left>0</left>
+  <lua_after_click>common/cikkval_refresh.lua [lfilter]</lua_after_click>
+  <parent>pcikkval</parent>
+</pcikkval_bfrissit>
+<pcikkval_bzaras>
+  <Type>custom_button</Type>
+  <Text>Cikk nélkül</Text>
+  <top>252</top>
+  <width>112</width>
+  <height>40</height>
+  <left>228</left>
+  <lua_after_click>common/cikkval_close.lua</lua_after_click>
+  <parent>pcikkval</parent>
+</pcikkval_bzaras>
+<selcikk>
+  <Type>label</Type>
+  <Text>0</Text>
+  <top>0</top>
+  <width>1</width>
+  <left>0</left>
+  <height>0</height>
+  <visible>false</visible>
+  <parent>pcikkval</parent>
+</selcikk>
+<selnev>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>0</top>
+  <width>330</width>
+  <left>0</left>
+  <height>0</height>
+  <visible>true</visible>
+  <bgcolor>yellow</bgcolor>
+  <parent>pcikkdetails</parent>
+</selnev>
+<selcsopnev>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>20</top>
+  <width>330</width>
+  <left>0</left>
+  <height>0</height>
+  <visible>true</visible>
+  <bgcolor>yellow</bgcolor>
+  <parent>pcikkdetails</parent>
+</selcsopnev>
+<pcikkdetails>
+  <type>panel</type>
+  <width>330</width>
+  <height>40</height>
+  <top>212</top>
+  <left>0</left>
+  <bgcolor>yellow</bgcolor>
+  <parent>pcikkval</parent>
+</pcikkdetails>
+</Root>

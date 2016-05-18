@@ -1,0 +1,97 @@
+<Root>
+<obj>pvalasztas;sellabel1;seltable;selbstart;selbclose;selmibiz;bcodebiz;selbrefresh;selbujbiz</obj>
+<pvalasztas>
+  <type>panel</type>
+  <width>350</width>
+  <height>300</height>
+  <top>0</top>
+  <left>0</left>
+  <visible>true</visible>
+</pvalasztas>
+<seltable>
+  <Type>table</Type>
+  <width>350</width>
+  <height>230</height>
+  <top>0</top>
+  <left>0</left>
+  <column_width_mibiz>140</column_width_mibiz>
+  <column_title_mibiz>Bizonylatszám</column_title_mibiz>
+  <column_width_cegnev>160</column_width_cegnev>
+  <column_title_cegnev>Vevő</column_title_cegnev>
+  <column_width_fizmod>60</column_width_fizmod>
+  <column_title_fizmod>Fizmód</column_title_fizmod>
+
+
+  <lua_on_create>rkkiadas/tasklist_read.lua kiadas</lua_on_create>
+  <lua_after_click>rkkiadas/tasklist_select.lua [selmibiz]</lua_after_click>
+  <valuefrom>mibiz</valuefrom>
+  <valueto>selmibiz</valueto>
+  <font_size>15</font_size>
+  <parent>pvalasztas</parent>
+</seltable>
+<sellabel1>
+  <Type>label</Type>
+  <Text>választott feladat</Text>
+  <top>232</top>
+  <width>350</width>
+  <bgcolor>yellow</bgcolor>
+  <left>0</left>
+  <parent>pvalasztas</parent>
+</sellabel1>
+<selbstart>
+  <Type>custom_button</Type>
+  <Text>Indítás</Text>
+  <top>252</top>
+  <width>80</width>
+  <height>40</height>
+  <left>0</left>
+  <lua_after_click>rkkiadas/kiadas_start.lua [selmibiz]</lua_after_click>
+  <parent>pvalasztas</parent>
+</selbstart>
+<selbujbiz>
+  <Type>custom_button</Type>
+  <Text>Új bizonylat</Text>
+  <top>252</top>
+  <width>80</width>
+  <height>40</height>
+  <left>82</left>
+  <lua_after_click>egyeb/menuinit.lua RKKIADAS_UJBIZ [lkezelo]</lua_after_click>
+  <parent>pvalasztas</parent>
+</selbujbiz>
+<selbrefresh>
+  <Type>custom_button</Type>
+  <Text>Frissités</Text>
+  <top>252</top>
+  <width>80</width>
+  <height>40</height>
+  <left>164</left>
+  <lua_after_click>rkkiadas/refresh_start.lua</lua_after_click>
+  <parent>pvalasztas</parent>
+</selbrefresh>
+<selbclose>
+  <Type>custom_button</Type>
+  <Text>Kilépés</Text>
+  <top>252</top>
+  <width>80</width>
+  <height>40</height>
+  <left>246</left>
+  <lua_after_click>common/panel_exit.lua</lua_after_click>
+  <parent>pvalasztas</parent>
+</selbclose>
+<selmibiz>
+  <Type>label</Type>
+  <Text>1</Text>
+  <top>0</top>
+  <width>1</width>
+  <left>0</left>
+  <height>0</height>
+  <visible>false</visible>
+  <parent>pvalasztas</parent>
+</selmibiz>
+<bcodebiz>
+  <Type>barcode</Type>
+  <lua_after_trigger>rkkiadas/kiadas_start.lua [selmibiz]</lua_after_trigger>
+  <valueto>selmibiz</valueto>
+</bcodebiz>
+
+</Root>

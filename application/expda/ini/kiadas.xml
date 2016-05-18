@@ -1,0 +1,184 @@
+<Root>
+<obj>altalanos;pvalasztas;panel1;ltitle;lhklabel;lhkodleir;lhkod;lhkoc;lcikk;lcikkc;ldrbossz;edrbkint;ButtonClose;bkovhkod;bkovcikk;BCode1;BCode2;lsorsz;pfooter;pzaras;lkezelo;lupdate</obj>
+<altalanos>
+  <Type>mainpanel</Type>
+  <text>Szedés</text>
+  <lua_on_create>kiadas/kiadas_panelinit.lua</lua_on_create>
+  <params_to_labels>lkezelo</params_to_labels>
+</altalanos>
+<lkezelo>
+  <Type>label</Type>
+  <top>0</top>
+  <left>0</left>
+  <width>0</width>
+  <height>0</height>
+  <visible>false</visible>
+</lkezelo>
+<lupdate>
+  <Type>label</Type>
+  <top>0</top>
+  <left>0</left>
+  <width>0</width>
+  <height>0</height>
+  <visible>false</visible>
+</lupdate>
+<panel1>
+  <type>panel</type>
+  <width>350</width>
+  <height>255</height>
+  <top>0</top>
+  <visible>false</visible>
+</panel1>
+<ltitle>
+  <Type>label</Type>
+  <Text>Kiadás</Text>
+  <top>0</top>
+  <width>350</width>
+  <parent>panel1</parent>
+  <bgcolor>yellow</bgcolor>
+  <font_bold>true</font_bold>
+</ltitle>
+<lhklabel>
+  <Type>label</Type>
+  <Text>Helykód:</Text>
+  <top>20</top>
+  <width>60</width>
+  <parent>panel1</parent>
+  <font_color>black</font_color>
+  <bgcolor>green</bgcolor>
+</lhklabel>
+<lhkodleir>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>45</top>
+  <width>260</width>
+  <parent>panel1</parent>
+  <font_color>black</font_color>
+</lhkodleir>
+<lhkod>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>20</top>
+  <width>60</width>
+  <parent>panel1</parent>
+  <left>61</left>
+  <font_color>black</font_color>
+  <font_size>14</font_size>
+</lhkod>
+<lhkoc>
+  <Type>text</Type>
+  <Text>_</Text>
+  <top>20</top>
+  <width>60</width>
+  <parent>panel1</parent>
+  <left>150</left>
+  <visible>true</visible>
+  <lua_on_change>kiadas/kiadas_bcode1.lua [selmibiz] [lsorsz] [lhkod] [lhkoc]</lua_on_change>
+  <bgcolor>orange</bgcolor>
+  <font_color>black</font_color>
+</lhkoc>
+<lcikk>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>75</top>
+  <width>330</width>
+  <parent>panel1</parent>
+  <left>0</left>
+  <font_color>blue</font_color>
+  <font_bold>true</font_bold>
+  <font_size>14</font_size>
+  <align>left</align>
+  <height>50</height>
+</lcikk>
+<lcikkc>
+  <Type>text</Type>
+  <Text>_</Text>
+  <top>20</top>
+  <width>100</width>
+  <parent>panel1</parent>
+  <left>212</left>
+  <visible>false</visible>
+  <lua_on_change>kiadas/kiadas_bcode2.lua [selmibiz] [lsorsz] [lhkod] [lcikkc] [lkezelo]</lua_on_change>
+  <bgcolor>orange</bgcolor>
+</lcikkc>
+<ldrbossz>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>120</top>
+  <width>60</width>
+  <parent>panel1</parent>
+  <left>0</left>
+  <font_color>green</font_color>
+  <font_size>14</font_size>
+</ldrbossz>
+<edrbkint>
+  <Type>text</Type>
+  <Text>_</Text>
+  <top>120</top>
+  <width>60</width>
+  <parent>panel1</parent>
+  <left>62</left>
+  <lua_on_change>kiadas/kiadas_bcode2.lua [selmibiz] [lsorsz] [lhkod] [lcikkc] [lkezelo]</lua_on_change>
+  <font_size>14</font_size>
+  <bgcolor>blue</bgcolor>
+  <font_color>white</font_color>
+</edrbkint>
+<ButtonClose>
+  <Type>custom_button</Type>
+  <Text>Átnézés</Text>
+  <top>200</top>
+  <width>100</width>
+  <height>40</height>
+  <lua_after_click>kiadas/kiadas_zaras.lua</lua_after_click>
+  <parent>panel1</parent>
+</ButtonClose>
+<bkovhkod>
+  <Type>custom_button</Type>
+  <Text>Köv. helykód</Text>
+  <top>200</top>
+  <width>100</width>
+  <height>40</height>
+  <left>102</left>
+  <lua_after_click>kiadas/kiadas_kovhkod.lua [selmibiz] [lsorsz] [lhkod]</lua_after_click>
+  <parent>panel1</parent>
+</bkovhkod>
+<bkovcikk>
+  <Type>custom_button</Type>
+  <Text>Köv. cikk</Text>
+  <top>200</top>
+  <width>100</width>
+  <height>40</height>
+  <left>204</left>
+  <lua_after_click>kiadas/kiadas_kovcikk.lua [selmibiz] [lsorsz] [lhkod]</lua_after_click>
+  <parent>panel1</parent>
+</bkovcikk>
+<BCode1>
+  <Type>barcode</Type>
+  <lua_after_trigger>kiadas/kiadas_bcode1.lua [selmibiz] [lsorsz] [lhkod] [lhkoc]</lua_after_trigger>
+  <valueto>lhkoc</valueto>
+</BCode1>
+<BCode2>
+  <Type>barcode</Type>
+  <lua_after_trigger>kiadas/kiadas_bcode2.lua [selmibiz] [lsorsz] [lhkod] [lcikkc] [lkezelo]</lua_after_trigger>
+  <valueto>lcikkc</valueto>
+</BCode2>
+<pvalasztas>
+  <file>pvalasztas_kiadas.xml</file>
+</pvalasztas>
+<lsorsz>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>0</top>
+  <width>0</width>
+  <left>0</left>
+  <height>0</height>
+  <parent>panel1</parent>
+  <visible>false</visible>
+</lsorsz>
+<pfooter>
+  <file>pfooter.xml</file>
+</pfooter>
+<pzaras>
+  <file>pzaras_kiadas.xml</file>
+</pzaras>
+</Root>

@@ -1,0 +1,57 @@
+<Root>
+<obj>pcegval;selcegtable;selcegbclose;selceg;selcegnev</obj>
+<pcegval>
+  <type>panel</type>
+  <width>350</width>
+  <height>300</height>
+  <top>0</top>
+  <left>0</left>
+  <visible>true</visible>
+</pcegval>
+<selcegtable>
+  <Type>table</Type>
+  <width>350</width>
+  <height>230</height>
+  <top>0</top>
+  <left>0</left>
+  <column_width_cegnev>300</column_width_cegnev>
+  <column_title_cegnev>Cégnév</column_title_cegnev>
+  <column_width_cegazon>0</column_width_cegazon>
+  <column_title_cegazon>azon</column_title_cegazon>
+  <lua_on_create>bevet/bevet_ceglist.lua</lua_on_create>
+  <valuefrom>cegazon;cegnev</valuefrom>
+  <valueto>selceg;selcegnev</valueto>
+  <font_size>15</font_size>
+  <parent>pcegval</parent>
+</selcegtable>
+<selcegbclose>
+  <Type>custom_button</Type>
+  <Text>Kilépés</Text>
+  <top>252</top>
+  <width>112</width>
+  <height>40</height>
+  <left>228</left>
+  <lua_after_click>common/panel_exit.lua</lua_after_click>
+  <parent>pcegval</parent>
+</selcegbclose>
+<selceg>
+  <Type>label</Type>
+  <Text>0</Text>
+  <top>0</top>
+  <width>1</width>
+  <left>0</left>
+  <height>0</height>
+  <visible>false</visible>
+  <parent>pcegval</parent>
+</selceg>
+<selcegnev>
+  <Type>label</Type>
+  <Text>0</Text>
+  <top>0</top>
+  <width>1</width>
+  <left>0</left>
+  <height>0</height>
+  <visible>false</visible>
+  <parent>pcegval</parent>
+</selcegnev>
+</Root>

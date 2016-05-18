@@ -1,0 +1,6 @@
+application/expda/export/common/
+bin/
+jar/el/
+sql/
+jar/nemkell/
+.settings/

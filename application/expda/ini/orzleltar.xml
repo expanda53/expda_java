@@ -1,0 +1,231 @@
+<Root>
+<obj>altalanos;panel1;ltitle;lhklabel;lhkoc;lcikklabel;lcegnev;lcikke;ldrbe;lcikkh;ldrbh;lcikkp;ldrbp;lcikkc;lcikod;ButtonClose;bkiad;bbevesz;bujhkod;BCode1;BCode2;pfooter;pzaras;lkezelo;ldrb</obj>
+<altalanos>
+  <Type>mainpanel</Type>
+  <text>Örzött leltár</text>
+  <lua_on_create>orzleltar/panelinit.lua</lua_on_create>
+  <params_to_labels>lkezelo</params_to_labels>
+</altalanos>
+<lkezelo>
+  <Type>label</Type>
+  <top>0</top>
+  <left>0</left>
+  <width>0</width>
+  <height>0</height>
+  <visible>false</visible>
+</lkezelo>
+<panel1>
+  <type>panel</type>
+  <width>350</width>
+  <height>255</height>
+  <top>0</top>
+  <visible>true</visible>
+</panel1>
+<ltitle>
+  <Type>label</Type>
+  <Text>Leltár</Text>
+  <top>0</top>
+  <width>350</width>
+  <parent>panel1</parent>
+  <bgcolor>#008B8B</bgcolor>
+  <font_bold>true</font_bold>
+</ltitle>
+<lhklabel>
+  <Type>label</Type>
+  <Text>Helykód:</Text>
+  <top>35</top>
+  <width>60</width>
+  <parent>panel1</parent>
+  <font_color>black</font_color>
+  <visible>true</visible>
+  <bgcolor>green</bgcolor>
+  <left>2</left>  
+</lhklabel>
+<lhkoc>
+  <Type>text</Type>
+  <Text>_</Text>
+  <top>35</top>
+  <width>60</width>
+  <parent>panel1</parent>
+  <left>65</left>
+  <visible>true</visible>
+  <lua_on_change>orzleltar/bcode1.lua [lhkoc]</lua_on_change>
+  <bgcolor>orange</bgcolor>
+  <font_color>black</font_color>
+</lhkoc>
+<lcikklabel>
+  <Type>label</Type>
+  <Text>Rendsz:</Text>
+  <top>65</top>
+  <width>60</width>
+  <parent>panel1</parent>
+  <left>2</left>
+  <font_color>black</font_color>
+  <bgcolor>green</bgcolor>
+  <visible>false</visible>
+</lcikklabel>
+<lcegnev>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>87</top>
+  <width>350</width>
+  <parent>panel1</parent>
+  <left>2</left>
+  <font_color>blue</font_color>
+  <font_bold>true</font_bold>
+  <visible>false</visible>
+  <align>left</align>
+</lcegnev>
+<lcikke>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>107</top>
+  <width>250</width>
+  <parent>panel1</parent>
+  <left>2</left>
+  <font_color>blue</font_color>
+  <font_bold>true</font_bold>
+  <visible>false</visible>
+  <align>left</align>
+</lcikke>
+<ldrbe>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>107</top>
+  <width>50</width>
+  <parent>panel1</parent>
+  <left>254</left>
+  <font_color>blue</font_color>
+  <font_bold>true</font_bold>
+  <visible>false</visible>
+  <align>left</align>
+</ldrbe>
+<lcikkh>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>127</top>
+  <width>250</width>
+  <parent>panel1</parent>
+  <left>2</left>
+  <font_color>blue</font_color>
+  <font_bold>true</font_bold>
+  <visible>false</visible>
+  <align>left</align>
+</lcikkh>
+<ldrbh>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>127</top>
+  <width>50</width>
+  <parent>panel1</parent>
+  <left>254</left>
+  <font_color>blue</font_color>
+  <font_bold>true</font_bold>
+  <visible>false</visible>
+  <align>left</align>
+</ldrbh>
+<lcikkp>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>147</top>
+  <width>250</width>
+  <parent>panel1</parent>
+  <left>2</left>
+  <font_color>blue</font_color>
+  <font_bold>true</font_bold>
+  <visible>false</visible>
+  <align>left</align>
+</lcikkp>
+<ldrbp>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>147</top>
+  <width>50</width>
+  <parent>panel1</parent>
+  <left>254</left>
+  <font_color>blue</font_color>
+  <font_bold>true</font_bold>
+  <visible>false</visible>
+  <align>left</align>
+</ldrbp>
+<lcikkc>
+  <Type>text</Type>
+  <Text>_</Text>
+  <top>65</top>
+  <width>100</width>
+  <parent>panel1</parent>
+  <left>65</left>
+  <visible>false</visible>
+  <bgcolor>orange</bgcolor>
+  <lua_on_change>orzleltar/bcode2.lua [lcikkc] [lkezelo]</lua_on_change>
+</lcikkc>
+<lcikod>
+  <Type>label</Type>
+  <top>0</top>
+  <left>0</left>
+  <width>0</width>
+  <height>0</height>
+  <visible>false</visible>
+</lcikod>
+<ldrb>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>167</top>
+  <width>60</width>
+  <parent>panel1</parent>
+  <left>2</left>
+  <font_color>blue</font_color>
+  <font_bold>true</font_bold>
+  <visible>false</visible>
+  <align>left</align>
+</ldrb>
+<ButtonClose>
+  <Type>custom_button</Type>
+  <Text>Átnézés</Text>
+  <top>200</top>
+  <width>100</width>
+  <height>40</height>
+  <lua_after_click>orzleltar/zaras.lua</lua_after_click>
+  <parent>panel1</parent>
+</ButtonClose>
+<bbevesz>
+  <Type>custom_button</Type>
+  <Text>Mentés</Text>
+  <top>200</top>
+  <width>100</width>
+  <height>40</height>
+  <left>204</left>
+  <lua_after_click>orzleltar/mentes.lua [lcikod] [lcikkc] + [lkezelo]</lua_after_click>
+  <parent>panel1</parent>
+  <visible>false</visible>
+</bbevesz>
+<bujhkod>
+  <Type>custom_button</Type>
+  <Text>Új helykód</Text>
+  <top>35</top>
+  <width>100</width>
+  <height>40</height>
+  <left>210</left>
+  <lua_after_click>orzleltar/ujhkod.lua</lua_after_click>
+  <parent>panel1</parent>
+  <visible>false</visible>
+</bujhkod>
+<BCode1>
+  <Type>barcode</Type>
+  <lua_after_trigger>orzleltar/bcode1.lua [lhkoc]</lua_after_trigger>
+  <valueto>lhkoc</valueto>
+</BCode1>
+<BCode2>
+  <Type>barcode</Type>
+  <lua_after_trigger>orzleltar/bcode2.lua [lcikkc] [lkezelo]</lua_after_trigger>
+  <valueto>lcikkc</valueto>
+</BCode2>
+<pfooter>
+  <file>pfooter.xml</file>
+</pfooter>
+<pzaras>
+  <file>pzaras_orzleltar.xml</file>
+</pzaras>
+
+
+</Root>

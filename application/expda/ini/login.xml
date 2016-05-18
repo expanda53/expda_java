@@ -1,0 +1,66 @@
+<Root>
+<obj>altalanos;pfooter;label1;ButtonClose;ButtonLogin;text1;selkezelo</obj>
+<altalanos>
+<Type>mainpanel</Type>
+<text>exPDA bejelentkezés</text>
+<lua_on_create>egyeb/login_init.lua</lua_on_create>
+</altalanos>
+<label1>
+  <Type>label</Type>
+  <Text>Felhasználó</Text>
+  <top>10</top>
+  <width>300</width>
+  <bgcolor>yellow</bgcolor>
+  <left>10</left>
+</label1>
+<text1>
+  <Type>label</Type>
+  <top>10</top>
+  <width>0</width>
+  <height>0</height>
+  <left>10</left>
+  <sql_on_change1>login_b1click [TEXT1]</sql_on_change1>
+  <lua_on_change>egyeb/login_b1click.lua [TEXT1]</lua_on_change>
+  <visible>false</visible>
+</text1>
+<selkezelo>
+  <Type>table</Type>
+  <width>300</width>
+  <height>180</height>
+  <top>30</top>
+  <left>10</left>
+  <column_width_keznev>295</column_width_keznev>
+  <column_title_keznev>Kezelő</column_title_keznev>
+  <column_width_bekod>0</column_width_bekod>
+  <column_title_bekod>azon</column_title_bekod>
+  <lua_on_create>egyeb/login_kezelolist.lua</lua_on_create>
+  <valuefrom>bekod</valuefrom>
+  <valueto>text1</valueto>
+  <font_size>12</font_size>
+</selkezelo>
+<ButtonLogin>
+  <Type>custom_button</Type>
+  <image>login.png</image>
+  <Text>Belépés</Text>
+  <left>10</left>
+  <top>212</top>
+  <width>140</width>
+  <height>60</height>
+  <sql_after_click1>login_b1click [TEXT1]</sql_after_click1>
+  <lua_after_click>egyeb/login_b1click.lua [TEXT1]</lua_after_click>
+</ButtonLogin>
+<ButtonClose>
+  <Type>custom_button</Type>
+  <image>logout.png</image>
+  <Text>Kilépés</Text>
+  <left>170</left>
+  <top>212</top>
+  <width>140</width>
+  <height>60</height>
+ <lua_after_click>common/panel_exit.lua</lua_after_click>
+</ButtonClose>
+<pfooter>
+  <file>pfooter.xml</file>
+</pfooter>
+
+</Root>

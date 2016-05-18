@@ -1,0 +1,117 @@
+package view;
+
+import java.awt.BorderLayout;
+import java.awt.Button;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.Panel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import symbol.ScanReadInfo;
+import symbol.ScannerListener;
+import symbol.TextData;
+
+public class XFrame extends Frame implements ScannerListener{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public MScanner s = new MScanner(this);
+	Button b1=new Button("Start");
+	Button b2=new Button("Stop");
+	Label l1=new Label("");
+	
+
+	
+
+	public XFrame() {
+		super("teszt");
+		addWindowListener( new WindowAdapter() {
+			public void windowClosing(WindowEvent we) {
+				try {
+					s.scannerOff();
+				}
+				catch (Exception e) {
+			
+					e.printStackTrace();
+				}
+                System.exit(0);
+            }
+        } );
+
+		setLayout(new BorderLayout());
+		setSize(200, 400);
+		Panel pane = new Panel();
+		pane.setLayout(null);
+
+		b1.setBounds(100, 10, 60, 24);
+		b2.setBounds(100, 100,60, 24);
+		b1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				s.scannerOn();
+			}
+		});
+		b2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				s.scannerOff();
+			}
+		});
+
+		pane.add(b1);
+		pane.add(b2);
+		
+		
+		pane.add(l1);
+		add(pane);
+//        Xmlpanel p = new Xmlpanel("teszt",this);
+//        Object[] objects = p.panelBeolvas();
+//        createPanel(pane, objects);
+
+		setVisible(true);
+		
+	}
+	
+//	private void createPanel(Panel pane, Object[] objects){
+//		for (int i=0;i<objects.length;i++){
+//			Object obj = objects[i];
+//			if (obj!=null)	{
+//				if (obj instanceof ObjLabel) {
+////					exLabel l = new exLabel((ObjLabel)obj);
+////					Label newlabel = l.createLabel();
+////					pane.add(newlabel);
+//				}
+//				if (obj instanceof ObjButton) {
+////					exButton b = new exButton((ObjButton)obj);
+////					Button newbutton = b.createButton();
+////					pane.add(newbutton);
+//				}
+//			}
+//		}
+//	
+//	}
+	
+	 public void windowActivated(WindowEvent e){
+         s.stopScanning = false;
+	 }
+	
+	 public void windowDeactivated(WindowEvent e){
+		 s.stopScanning = true;
+		 
+		 s.cancel();
+	 }
+
+	public void readNotify(ScanReadInfo result) {
+		// TODO Auto-generated method stub
+        //System.out.println("A lott adat: " + ((TextData) result.data).text + "\n");
+        l1.setText(((TextData) result.data).text);
+
+	}
+
+
+	
+	
+
+}

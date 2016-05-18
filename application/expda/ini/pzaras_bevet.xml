@@ -1,0 +1,94 @@
+<Root>
+<obj>pzaras;seltablezar;selbmost;selbjav;selbkesobb;selbclose;selsorsz;seldrb</obj>
+<pzaras>
+  <type>panel</type>
+  <width>350</width>
+  <height>300</height>
+  <top>0</top>
+  <left>0</left>
+  <visible>false</visible>
+</pzaras>
+<seltablezar>
+  <Type>table</Type>
+  <width>350</width>
+  <height>235</height>
+  <top>0</top>
+  <left>0</left>
+  <column_width_cikknev>150</column_width_cikknev>
+  <column_title_cikknev>Cikk</column_title_cikknev>
+  <column_width_hkod>60</column_width_hkod>
+  <column_title_hkod>Helykód</column_title_hkod>
+  <column_width_drb>60</column_width_drb>
+  <column_title_drb>Össz</column_title_drb>
+  <column_width_drb2>60</column_width_drb2>
+  <column_title_drb2>Ki</column_title_drb2>
+  <column_width_sorsz>0</column_width_sorsz>
+  <column_title_sorsz>sorsz</column_title_sorsz>
+  <valuefrom>sorsz;drb</valuefrom>
+  <valueto>selsorsz;seldrb</valueto>  
+  <lua_on_create>bevet/bevet_zaraslist.lua [ltitle]</lua_on_create>
+  <font_size>10</font_size>
+  <parent>pzaras</parent>
+</seltablezar>
+<selbmost>
+  <Type>custom_button</Type>
+  <Text>Folyt. most</Text>
+  <top>252</top>
+  <width>70</width>
+  <height>40</height>
+  <left>0</left>
+  <lua_after_click>kiadas/kiadas_folytmost.lua</lua_after_click>
+  <parent>pzaras</parent>
+</selbmost>
+<selbjav>
+  <Type>custom_button</Type>
+  <Text>Javít</Text>
+  <top>252</top>
+  <width>50</width>
+  <height>40</height>
+  <left>72</left>
+  <lua_after_click>bevet/bevet_javit.lua [ltitle] [selsorsz] [seldrb] [lcegazon] [lkezelo]</lua_after_click>
+  <parent>pzaras</parent>
+</selbjav>
+<selbkesobb>
+  <Type>custom_button</Type>
+  <Text>Folyt. később</Text>
+  <top>252</top>
+  <width>80</width>
+  <height>40</height>
+  <left>124</left>
+  <lua_after_click>common/panel_exit.lua</lua_after_click>
+  <parent>pzaras</parent>
+</selbkesobb>
+<selbclose>
+  <Type>custom_button</Type>
+  <Text>Lezárás</Text>
+  <top>252</top>
+  <width>60</width>
+  <height>40</height>
+  <left>206</left>
+  <lua_after_click>bevet/bevet_close.lua [ltitle] [ehivat] [lcegazon] [lkezelo]</lua_after_click>
+  <parent>pzaras</parent>
+</selbclose>
+<selsorsz>
+  <Type>label</Type>
+  <Text>-</Text>
+  <top>0</top>
+  <width>1</width>
+  <left>0</left>
+  <height>0</height>
+  <visible>false</visible>
+  <parent>pzaras</parent>
+</selsorsz>
+<seldrb>
+  <Type>label</Type>
+  <Text>-</Text>
+  <top>0</top>
+  <width>1</width>
+  <left>0</left>
+  <height>0</height>
+  <visible>false</visible>
+  <parent>pzaras</parent>
+</seldrb>
+
+</Root>

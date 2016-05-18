@@ -1,0 +1,113 @@
+<Root>
+<obj>altalanos;ButtonClose;Button2;Button3;Button4;Button5;Button6;pfooter;lkezelo;BSync;BSlowsync;lupdate</obj>
+<altalanos>
+  <Type>menupanel</Type>
+  <text>Fomenü</text>
+  <bgcolor>White</bgcolor>
+  <params_to_labels>lkezelo</params_to_labels>
+  <sql_on_create1>menu_panelinit [lkezelo]</sql_on_create1>
+  <lua_on_create1>sync/tasklist_refresh.lua</lua_on_create1>
+  <lua_on_create>egyeb/menu_panelinit.lua [lkezelo]</lua_on_create>
+</altalanos>
+<lupdate>
+  <Type>label</Type>
+  <top>0</top>
+  <left>0</left>
+  <width>0</width>
+  <height>0</height>
+  <visible>false</visible>
+</lupdate>
+<lkezelo>
+  <Type>label</Type>
+  <top>0</top>
+  <left>0</left>
+  <width>0</width>
+  <height>0</height>
+  <visible>false</visible>
+</lkezelo>
+<Button2>
+  <Type>custom_button</Type>
+  <image>order.png</image>
+  <Text>Kiadás</Text>
+  <top>10</top>
+  <width>120</width>
+  <height>55</height>
+  <left>30</left>
+  <lua_after_click>egyeb/menuinit.lua KIADAS [lkezelo]</lua_after_click>
+</Button2>
+<Button3>
+  <Type>custom_button</Type>
+  <image>truck.png</image>
+  <Text>Bevét</Text>
+  <top>10</top>
+  <width>120</width>
+  <height>55</height>
+  <left>160</left>
+  <lua_after_click>egyeb/menuinit.lua MENU_BEVET [lkezelo]</lua_after_click>
+</Button3>
+<Button4>
+  <Type>custom_button</Type>
+  <image>plus-minus.png</image>
+  <Text>Pakolás</Text>
+  <top>130</top>
+  <width>120</width>
+  <height>55</height>
+  <left>30</left>
+  <lua_after_click>egyeb/menuinit.lua MENU_HKODREND [lkezelo]</lua_after_click>
+</Button4>
+<Button5>
+  <Type>custom_button</Type>
+  <image>shelf.png</image>
+  <Text>Leltár</Text>
+  <top>70</top>
+  <width>120</width>
+  <height>55</height>
+  <left>30</left>
+  <lua_after_click>egyeb/menuinit.lua MENU_LELTAR [lkezelo]</lua_after_click>
+</Button5>
+<Button6>
+  <Type>custom_button</Type>
+  <image>arrow-in.png</image>
+  <Text>Raktárközi</Text>
+  <top>70</top>
+  <width>120</width>
+  <height>55</height>
+  <left>160</left>
+  <lua_after_click>egyeb/menuinit.lua MENU_RKOZI [lkezelo]</lua_after_click>
+</Button6>
+<ButtonClose>
+  <Type>custom_button</Type>
+  <left>160</left>
+  <image>logout.png</image>
+  <Text>Kilépés</Text>
+  <top>130</top>
+  <width>120</width>
+  <height>55</height>
+  <lua_after_click>egyeb/menuinit.lua EXIT [lkezelo]</lua_after_click>
+</ButtonClose>
+<BSlowsync>
+  <Type>custom_button</Type>
+  <left>30</left>
+  <image>sync.png</image>
+  <Text>Törzsadatok</Text>
+  <top>190</top>
+  <width>120</width>
+  <height>55</height>
+  <lua_after_click>sync/cegcikk_refresh.lua</lua_after_click>
+  <bgcolor>yellow</bgcolor>
+</BSlowsync>
+<BSync>
+  <Type>custom_button</Type>
+  <left>160</left>
+  <image>sync.png</image>
+  <Text>Bizonylatok</Text>
+  <top>190</top>
+  <width>120</width>
+  <height>55</height>
+  <lua_after_click>sync/tasklist_refresh.lua</lua_after_click>
+  <bgcolor>orange</bgcolor>
+</BSync>
+<pfooter>
+  <file>pfooter.xml</file>
+</pfooter>
+</Root>

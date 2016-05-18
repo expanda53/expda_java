@@ -1,0 +1,129 @@
+<Root>
+<obj>pzaras;seltablesum;seltabledetails;selbmost;selbkesobb;selbclosebevet;selcikk;selbjavitas;seldrb;selhkod;selcikod</obj>
+<pzaras>
+  <type>panel</type>
+  <width>350</width>
+  <height>300</height>
+  <top>0</top>
+  <left>0</left>
+  <visible>true</visible>
+</pzaras>
+<seltablesum>
+  <Type>table</Type>
+  <width>350</width>
+  <height>135</height>
+  <top>0</top>
+  <left>0</left>
+  <column_width_cikknev>290</column_width_cikknev>
+  <column_title_cikknev>Cikk</column_title_cikknev>
+  <column_width_drb>40</column_width_drb>
+  <column_title_drb>Db</column_title_drb>
+  <column_width_leir>0</column_width_leir>
+  <column_title_leir>Cikk</column_title_leir>
+  <column_width_cikk>10</column_width_cikk>
+  <column_title_cikk>kod</column_title_cikk>
+  <lua_on_create>rkbevet_hkod/hkod_zaraslist_sum.lua [lkezelo]</lua_on_create>
+  <lua_after_click>rkbevet_hkod/hkod_zaraslist_select.lua</lua_after_click>
+  <valuefrom>leir;cikk</valuefrom>
+  <valueto>selcikk;selcikod</valueto>  
+  <font_size>10</font_size>
+  <parent>pzaras</parent>
+</seltablesum>
+<seltabledetails>
+  <Type>table</Type>
+  <width>215</width>
+  <height>110</height>
+  <top>135</top>
+  <left>0</left>
+  <column_width_hkod>100</column_width_hkod>
+  <column_title_hkod>Hkód</column_title_hkod>
+  <column_width_drb>100</column_width_drb>
+  <column_title_drb>Db</column_title_drb>
+  <lua_on_create>rkbevet_hkod/hkod_zaraslist_details.lua [selcikk] [lkezelo]</lua_on_create>
+  <font_size>10</font_size>
+  <parent>pzaras</parent>
+  <valuefrom>hkod;drb</valuefrom>
+  <valueto>selhkod;seldrb</valueto>  
+</seltabledetails>
+<selbmost>
+  <Type>custom_button</Type>
+  <Text>Folyt. most</Text>
+  <top>247</top>
+  <width>100</width>
+  <height>40</height>
+  <left>0</left>
+  <lua_after_click>kiadas/kiadas_folytmost.lua</lua_after_click>
+  <parent>pzaras</parent>
+</selbmost>
+
+<selbjavitas>
+  <Type>custom_button</Type>
+  <Text>Javítás</Text>
+  <top>135</top>
+  <width>100</width>
+  <height>40</height>
+  <left>217</left>
+   <lua_after_click>rkbevet_hkod/hkod_zaras_javit.lua [selcikod] [selcikk] [selhkod] [seldrb] [lkezelo]</lua_after_click>
+  <parent>pzaras</parent>
+</selbjavitas>
+<selbkesobb>
+  <Type>custom_button</Type>
+  <Text>Folyt. később</Text>
+  <top>247</top>
+  <width>100</width>
+  <height>40</height>
+  <left>108</left>
+   <lua_after_click>common/panel_exit.lua [lkezelo]</lua_after_click>
+  <parent>pzaras</parent>
+</selbkesobb>
+<selbclosebevet>
+  <Type>custom_button</Type>
+  <Text>Lezárás</Text>
+  <top>247</top>
+  <width>100</width>
+  <height>40</height>
+  <left>217</left>
+  <lua_after_click>rkbevet_hkod/hkod_close.lua [lkezelo]</lua_after_click>
+  <parent>pzaras</parent>
+</selbclosebevet>
+<selcikk>
+  <Type>label</Type>
+  <Text>0</Text>
+  <top>0</top>
+  <width>1</width>
+  <left>0</left>
+  <height>0</height>
+  <visible>false</visible>
+  <parent>pzaras</parent>
+</selcikk>
+<selcikod>
+  <Type>label</Type>
+  <Text>-</Text>
+  <top>0</top>
+  <width>1</width>
+  <left>0</left>
+  <height>0</height>
+  <visible>false</visible>
+  <parent>pzaras</parent>
+</selcikod>
+<seldrb>
+  <Type>label</Type>
+  <Text>-</Text>
+  <top>0</top>
+  <width>1</width>
+  <left>0</left>
+  <height>0</height>
+  <visible>false</visible>
+  <parent>pzaras</parent>
+</seldrb>
+<selhkod>
+  <Type>label</Type>
+  <Text>-</Text>
+  <top>0</top>
+  <width>1</width>
+  <left>0</left>
+  <height>0</height>
+  <visible>false</visible>
+  <parent>pzaras</parent>
+</selhkod>
+</Root>

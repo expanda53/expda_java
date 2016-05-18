@@ -1,0 +1,219 @@
+<Root>
+<obj>altalanos;pcikkval;panel1;pcegval;ltitle;lhklabel;lhkoc;lcikklabel;lcikk;lcikkc;lcikod;ButtonClose;bujhkod;BCode0;BCode1;BCode2;pfooter;pzaras;lkezelo;pcikkval_bvalaszt;ldrb;lcegazon;lhivat;ehivat;selcegbstart;selcegbures</obj>
+<altalanos>
+  <Type>mainpanel</Type>
+  <text>Helykódos bevét</text>
+  <lua_on_create>bevet_hkod/hkod_panelinit.lua</lua_on_create>
+  <params_to_labels>lkezelo</params_to_labels>
+</altalanos>
+<lkezelo>
+  <Type>label</Type>
+  <top>0</top>
+  <left>0</left>
+  <width>0</width>
+  <height>0</height>
+  <visible>false</visible>
+</lkezelo>
+<panel1>
+  <type>panel</type>
+  <width>350</width>
+  <height>255</height>
+  <top>0</top>
+  <visible>false</visible>
+</panel1>
+<ltitle>
+  <Type>label</Type>
+  <Text>Helykód rendezés</Text>
+  <top>0</top>
+  <width>350</width>
+  <parent>panel1</parent>
+  <bgcolor>#008B8B</bgcolor>
+  <font_bold>true</font_bold>
+</ltitle>
+<lhivat>
+  <Type>label</Type>
+  <Text>Hivatkozás:</Text>
+  <top>22</top>
+  <width>60</width>
+  <parent>panel1</parent>
+  <left>5</left>
+  <font_bold>true</font_bold>
+  <bgcolor>white</bgcolor>
+  <align>left</align>
+</lhivat>
+<ehivat>
+  <Type>text</Type>
+  <Text1>_</Text1>
+  <top>22</top>
+  <width>200</width>
+  <parent>panel1</parent>
+  <left>65</left>
+  <bgcolor>orange</bgcolor>
+  <lua_on_change>bevet_hkod/hkod_ujhivat.lua [ehivat] [lcegazon] [lkezelo]</lua_on_change>
+</ehivat>
+
+<lhklabel>
+  <Type>label</Type>
+  <Text>Helykód:</Text>
+  <top>90</top>
+  <width>60</width>
+  <parent>panel1</parent>
+  <font_color>black</font_color>
+  <visible>false</visible>
+  <bgcolor>green</bgcolor>
+  <left>2</left>  
+</lhklabel>
+<lhkoc>
+  <Type>text</Type>
+  <Text>_</Text>
+  <top>90</top>
+  <width>60</width>
+  <parent>panel1</parent>
+  <left>65</left>
+  <visible>false</visible>
+  <lua_on_change>bevet_hkod/hkod_bcode1.lua [lhkoc]</lua_on_change>
+  <bgcolor>orange</bgcolor>
+  <font_color>black</font_color>
+</lhkoc>
+<lcikklabel>
+  <Type>label</Type>
+  <Text>Cikk</Text>
+  <top>120</top>
+  <width>60</width>
+  <parent>panel1</parent>
+  <left>2</left>
+  <font_color>black</font_color>
+  <bgcolor>green</bgcolor>
+  <visible>false</visible>
+</lcikklabel>
+<lcikk>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>142</top>
+  <width>350</width>
+  <parent>panel1</parent>
+  <left>2</left>
+  <font_color>blue</font_color>
+  <font_bold>true</font_bold>
+  <visible>false</visible>
+  <align>left</align>
+</lcikk>
+<lcikkc>
+  <Type>text</Type>
+  <Text>_</Text>
+  <top>120</top>
+  <width>100</width>
+  <parent>panel1</parent>
+  <left>65</left>
+  <visible>false</visible>
+  <bgcolor>orange</bgcolor>
+  <lua_on_change>bevet_hkod/hkod_bcode2.lua [lcikkc] [lkezelo] [lhkoc]</lua_on_change>
+</lcikkc>
+<lcikod>
+  <Type>label</Type>
+  <top>0</top>
+  <left>0</left>
+  <width>0</width>
+  <height>0</height>
+  <visible>false</visible>
+</lcikod>
+
+<ButtonClose>
+  <Type>custom_button</Type>
+  <Text>Átnézés</Text>
+  <top>200</top>
+  <width>100</width>
+  <height>40</height>
+  <lua_after_click>bevet_hkod/hkod_zaras.lua</lua_after_click>
+  <parent>panel1</parent>
+</ButtonClose>
+<bujhkod>
+  <Type>custom_button</Type>
+  <Text>Új helykód</Text>
+  <top>45</top>
+  <width>100</width>
+  <height>40</height>
+  <left>210</left>
+  <lua_after_click>bevet_hkod/hkod_ujhkod.lua</lua_after_click>
+  <parent>panel1</parent>
+  <visible>false</visible>
+</bujhkod>
+<BCode0>
+  <Type>barcode</Type>
+  <valueto>ehivat</valueto>
+  <lua_after_trigger>bevet_hkod/hkod_ujhivat.lua [ehivat] [lcegazon] [lkezelo]</lua_after_trigger>
+</BCode0>
+<BCode1>
+  <Type>barcode</Type>
+  <lua_after_trigger>bevet_hkod/hkod_bcode1.lua [lhkoc]</lua_after_trigger>
+  <valueto>lhkoc</valueto>
+</BCode1>
+<BCode2>
+  <Type>barcode</Type>
+  <lua_after_trigger>bevet_hkod/hkod_bcode2.lua [lcikkc] [lkezelo] [lhkoc] +</lua_after_trigger>
+  <valueto>lcikkc</valueto>
+</BCode2>
+<pfooter>
+  <file>pfooter.xml</file>
+</pfooter>
+<pzaras>
+  <file>pzaras_bevet_hkod.xml</file>
+</pzaras>
+<pcikkval>
+  <file>pcikkval.xml</file>
+</pcikkval>
+<pcikkval_bvalaszt>
+  <Type>custom_button</Type>
+  <Text>Kiválaszt</Text>
+  <top>252</top>
+  <width>112</width>
+  <height>40</height>
+  <left>114</left>
+  <lua_after_click>bevet_hkod/hkod_cikkment.lua [lcikkc] [selcikk] [selnev] [lkezelo]</lua_after_click>
+  <parent>pcikkval</parent>
+</pcikkval_bvalaszt>
+<ldrb>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>162</top>
+  <width>60</width>
+  <parent>panel1</parent>
+  <left>2</left>
+  <font_color>blue</font_color>
+  <font_bold>true</font_bold>
+  <visible>false</visible>
+  <align>left</align>
+</ldrb>
+<lcegazon>
+  <Type>label</Type>
+  <Text>_</Text>
+  <top>0</top>
+  <width>0</width>
+  <height>0</height>
+  <parent>panel1</parent>
+  <visible>false</visible>
+</lcegazon>
+<pcegval>
+  <file>pcegval.xml</file>
+</pcegval>
+<selcegbstart>
+  <Type>custom_button</Type>
+  <Text>Indítás</Text>
+  <top>252</top>
+  <width>112</width>
+  <height>40</height>
+  <left>0</left>
+  <lua_after_click>bevet_hkod/hkod_start.lua [selceg]</lua_after_click>
+  <parent>pcegval</parent>
+</selcegbstart>
+<selcegbures>
+  <Type>custom_button</Type>
+  <Text>Nincs cég</Text>
+  <top>252</top>
+  <width>112</width>
+  <height>40</height>
+  <left>114</left>
+  <lua_after_click>bevet_hkod/hkod_start.lua :0</lua_after_click>
+  <parent>pcegval</parent>
+</selcegbures>
+</Root>
