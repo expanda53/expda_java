@@ -13,6 +13,7 @@ if mehet then
 	filename = luafunc.ini('exportdir') ..'\\' .. subdir.. '\\' .. mibiz .. '.txt'
 	file = io.open (filename , "r")
 	lezaras_mehet = true
+    minusz_volt = false
 	if file~=nil then
 		source = file:read("*a")
 		file:close()
@@ -31,13 +32,20 @@ if mehet then
 			    if aktrow['DRB'] ~= 0 then
 				  lezaras_mehet=false
 				end
+			    if aktrow['DRB'] < 0 then
+				  minusz_volt=true
+				end
 				aktrow['LEIR'] = row['LEIR']
 				aktrow['DRB']=0
 			end
 			aktrow['DRB']=aktrow['DRB'] + row['DRB']
-			if (lezaras_mehet==false) then break end
+			--if (lezaras_mehet==false) then break end
 		end
 		if aktrow['DRB'] ~= 0 then lezaras_mehet = false end
+        --ha nem volt minuszos sor, akkor futtathato a lezaras. ilyenkor csak bevet van, kiadas generalodik hozza.
+        if (minusz_volt==false) then 
+          lezaras_mehet=true;
+        end
 		if lezaras_mehet==false then
 			ui:showMessage("Hibás tétel a listában. Nem zárható, amíg nincs javítva!")
 		else
