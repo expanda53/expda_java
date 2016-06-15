@@ -28,7 +28,7 @@ if (luafunc.getWifiStrength()>0) then
 	file = io.open (filename , "w")
 	if (list~=nil) then
 	  for i, v in ipairs(list) do
-	    local aktcikk = v['CIKK']
+	    aktcikk = v['CIKK']
 		if (aktcikk ~= "") then
 		  file:write ('[[CIKK=' .. v['CIKK'] .. ']][[VKOD=' .. v['VKOD'] .. ']][[DRB=' .. v['DRB'] .. ']]\n')
 		end

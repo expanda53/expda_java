@@ -11,7 +11,7 @@ ui:executeCommand('valuetohidden','lcikod',cikod)
 ui:executeCommand('hideobj','pcikkval','')
 ui:executeCommand('showobj','panel1','')
 hkod = ui:findObject('LHKOC'):getText()
-ui:executeCommand('STARTLUA','bevet_hkod/hkod_mentes.lua '..cikod..' ' .. cikk .. ' ' .. hkod:gsub(' ', '%%20') .. ' ' .. kezelo,'')
+ui:executeCommand('STARTLUA','rkbevet_hkod/hkod_mentes.lua '..cikod..' ' .. cikk .. ' ' .. hkod:gsub(' ', '%%20') .. ' ' .. kezelo,'')
 
 
 

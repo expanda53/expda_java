@@ -30,6 +30,7 @@ if (mehet) then
 	for i, r in ipairs(t) do
 		  if r['SORSZ'] == aktsorsz then 
 			t[i]['DRB']= drb 
+            cikod = r['CIKK']
 			vkod = r['LEIR']
 			okbiz = r['OKBIZ']
 			row_found = true
@@ -53,7 +54,7 @@ if (mehet) then
 		filenameu = luafunc.ini('exportdir') ..'\\' .. subdir.. '\\' .. mibiz.. '_update.txt'
 		file = io.open (filenameu , "a")
 		
-		sor = 'RKBEVET_BCODE1_UPD ' .. vkod .. ' ' .. kezelo ..' ' .. drb .. '\n'
+		sor = 'RKBEVET_BCODE1_UPD ' ..cikod..' ' .. vkod .. ' ' .. kezelo ..' ' .. drb .. '\n'
 		file:write (sor) 
 
 		file:close()

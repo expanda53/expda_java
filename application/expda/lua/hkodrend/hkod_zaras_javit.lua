@@ -78,7 +78,8 @@ if (mehet) then
 		
 		filenameu = luafunc.ini('exportdir') ..'\\' .. subdir .. '\\' .. mibiz.. '_update.txt'
 		file = io.open (filenameu , "a")
-		sor = 'HKOD_MENTES2 ' ..cikk .. ' ' ..vkod .. ' ' .. hkod:gsub(' ', '%%20') .. ' ' .. elojel .. ' ' .. kezelo .. ' ' .. drb .. ' ' .. hivszam .. ' '..cegazon ..'\n'
+        sor = 'HKOD_MENTES2 ' ..cikk .. ' ' ..vkod .. ' ' .. hkod:gsub(' ', '%%20') .. ' ' .. elojel .. ' ' .. kezelo .. ' ' .. drb .. ' ' .. hivszam .. ' ' ..cegazon .. ' 0\n'
+
 		file:write (sor) 
 
 		file:close()

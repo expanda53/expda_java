@@ -194,6 +194,18 @@ function sendFiles(ui,files)
           local lupdate = ui:findObject('lupdate')
           if (lupdate~=nil) then
             local updatestat = lupdate:getText()
+            if updatestat~="OK" then
+              ui:showMessage(updatestat) 
+            end
+            local spl = exClass.split(updatestat,"#")
+            -- ; nem jo, vsz a php miatt
+            updatestat=spl[1]
+            n = #(spl)
+            local msg= ""
+            if n>1 then
+                  msg=spl[2]
+                  ui:showMessage(msg) 
+            end
             if updatestat ~= "OK" then
               ui:showMessage(updatestat) 
               rename_mehet = false
