@@ -49,12 +49,44 @@ if mehet then
 		if lezaras_mehet==false then
 			ui:showMessage("Hibás tétel a listában. Nem zárható, amíg nincs javítva!")
 		else
+            --content file átnevezése, hogy lezaras utan ujat kezdjen a rendszer
+            local newfilename = filename
+            local nr = 1;
+            local nf=filename
+                newfilename = nf .. nr
+            
+            while true do
+                local res = os.rename(filename,newfilename)
+                if (res==nil) then
+                    nr = nr + 1
+                    newfilename = nf .. nr
+                else
+                    break
+                end
+            end
+
 			sor = 'HKOD_CLOSE_UPD ' .. kezelo  .. ' ' ..  hivszam .. ' ' ..cegazon .. '\n'
 			filename = luafunc.ini('exportdir') ..'\\' .. subdir.. '\\' .. mibiz.. '_update.txt'
 			file = io.open (filename , "a")
 			file:write (sor)
 			file:close()
 			ui:executeCommand('close','','')
+            
+            --update file átnevezése, hogy lezaras utan ujat kezdjen a rendszer
+            local newfilename = filename
+            local nr = 1;
+            local nf=filename
+            newfilename = nf .. nr
+            while true do
+                local res = os.rename(filename,newfilename)
+                if (res==nil) then
+                    nr = nr + 1
+                    newfilename = nf .. nr
+                else
+                    break
+                end
+            end
+          
 		end
 	  
 	else

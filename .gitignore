@@ -4,3 +4,4 @@ jar/el/
 sql/
 jar/nemkell/
 .settings/
+*.txt
