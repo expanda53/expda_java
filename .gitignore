@@ -5,3 +5,5 @@ sql/
 jar/nemkell/
 .settings/
 *.txt
+application/expda/lua/rkbevet/_bevet_bcode1.lua
+application/expda/lua/rkbevet/_bevet_cikkment.lua
